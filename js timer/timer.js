@@ -14,7 +14,7 @@ function startTimer(duration, ) {
     },1000);
 }
 window.onload = function () {
-    var timer = 15,//da cambiare..collegare una functione 
+    var timer = 15//da cambiare..collegare una functione 
         display = document.querySelector('#timer');
     startTimer(timer);
 };
