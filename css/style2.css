@@ -1,0 +1,41 @@
+.grp2_PaginaBench{
+    background-image:url(../assest/bg.jpg);
+    color: white;
+    width: 1024;
+    height: 728px;
+    padding: 50px;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+.risposte {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+*/
+
+.risposte {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+}
+
+/*
+.stringaRisposte{
+    height: 100px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px black;  
+}*/
+
+    
+.stringaRisposte{
+    
+    height: 100px;
+    border: 1px solid red;
+    width: 200px;
+}
+
