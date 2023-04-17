@@ -12,23 +12,19 @@
 </head>
 
 <body>
-<div id="time">
     
-    <div class="circle">
-        <div id="timer"></div>
-        
-        <svg width= '250', height="200">
-            <circle cx="90" cy="80" r="70">
-                <text x="100" y="100" id="timer"></text>
-            </circle>
-            <circle cx="90" cy="80" r="70">
-            </circle>
-        </svg>     
-    </div>
+    <div id="time">    
+        <div class="circle">   
+            <svg width='200', height="200"> 
+                <circle id="circle_background" cx="100" cy="100" r="70"/>
+                <circle id="circle" cx="100" cy="100" r="70"/>  
+                <text id="timer" x="50%" y="50%" text-anchor="middle" stroke-width="1px" dy=".3em"></text> 
+                <text class="svg_text_circle" x="50%" y="30%" text-anchor="middle">SECONDS</text> 
+                <text class="svg_text_circle" x="50%" y="70%" text-anchor="middle">REMAINING</text> 
+            </svg>      
+        </div>    
+    </div> 
     
-</div>
-
-
     <script src="js timer/timer.js"></script>
 </body>
 
