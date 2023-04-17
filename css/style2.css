@@ -8,14 +8,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/*
-.risposte {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-*/
-
 #risposte {
     display: flex;
     flex-wrap: wrap;
@@ -23,20 +15,19 @@
     padding: 30px;
 }
 
-/*
-.stringaRisposte{
-    height: 100px;
-    width: 300px;
-    border-radius: 15px;
-    box-shadow: 1px 1px 10px black;  
-}*/
-
-    
 .stringaRisposte{
     margin: 20px;
     height: 100px;
-    border: 1px solid red;
     width: 550px;
-    border-radius: 15px;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    color: white;
+    box-shadow: -1px 0 2px white;
+}
+
+.stringaRisposte:hover {
+    background-color: purple;
 }
 
