@@ -1,10 +1,12 @@
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+let timer = document.getElementById('timer');
+
+function startTimer(duration, ) {
+    var timer = duration, seconds;
     setInterval(function () {
         
         seconds = parseInt(timer);
         
-        display.textContent =  seconds;
+        document.getElementById('timer').innerHTML =  seconds;
 
         if (--timer < 0) {
             timer = duration;
@@ -12,9 +14,9 @@ function startTimer(duration, display) {
     },1000);
 }
 window.onload = function () {
-    var timer = 10,//da cambiare..collegare una functione 
-        display = document.querySelector('#time');
-    startTimer(timer, display);
+    var timer = 15,//da cambiare..collegare una functione 
+        display = document.querySelector('#timer');
+    startTimer(timer);
 };
 
 
