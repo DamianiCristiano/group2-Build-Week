@@ -44,6 +44,7 @@ h3 {
     font-size: 20px;
     box-shadow: 0 0 25px #43ffff;
     border: none;
+    cursor: pointer;
 }
 /*Finire di definire il bottone, perchè non funziona la spunta*/
 #checkBox{

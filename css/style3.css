@@ -30,7 +30,7 @@
     font-size: 50px;
 }
 
-.circle {
+.paginaCircle {
     border: 40px solid red;
     border-radius: 100%;
     padding: 50px;
@@ -55,5 +55,6 @@
     font-size: 20px;
     padding: 15px 50px;
     font-weight: bold;
+    cursor: pointer;
 }
 

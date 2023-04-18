@@ -19,10 +19,24 @@
     font-weight: bold;
 }
 
+#stelleValut {
+    margin-bottom: 80px;
+}
+
 .comment input {
     background: none;
-    border-bottom: 2px solid purple;
-    width: 200px;
+    border: none;
+    border-bottom: 2px solid #c2148d;
+    width: 450px;
+    margin: 30px 0 50px 0;
+}
+
+.comment input::placeholder {
+    padding: 20px;
+}
+
+.grp2_paginaFeedback button {
+    cursor: pointer;
 }
 
 
