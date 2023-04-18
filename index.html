@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,11 @@
     <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/style3.css">
     <link rel="stylesheet" href="css/style4.css">
+    <link rel="stylesheet" href="css timer/reset.css">
+    <link rel="stylesheet" href="css timer/styletimer.css">
+    
 </head>
+
 <body>
             
             <div class="grp2_PaginaBenv">
@@ -136,5 +141,20 @@
 
           </div>
 
+    
+    <div id="time">    
+        <div class="circle">   
+            <svg width='200', height="200"> 
+                <circle id="circle_background" cx="100" cy="100" r="70"/>
+                <circle id="circle" cx="100" cy="100" r="70"/>  
+                <text id="timer" x="50%" y="50%" text-anchor="middle" stroke-width="1px" dy=".3em"></text> 
+                <text class="svg_text_circle" x="50%" y="30%" text-anchor="middle">SECONDS</text> 
+                <text class="svg_text_circle" x="50%" y="70%" text-anchor="middle">REMAINING</text> 
+            </svg>      
+        </div>    
+    </div> 
+    
+    <script src="js timer/timer.js"></script>
 </body>
+
 </html>
