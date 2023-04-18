@@ -15,6 +15,13 @@
     padding: 30px;
 }
 
+.stringaDomanda{
+    color:white;
+    text-align: center;
+}
+
+
+
 .stringaRisposte{
     margin: 20px;
     height: 100px;
@@ -30,4 +37,5 @@
 .stringaRisposte:hover {
     background-color: purple;
 }
+
 
