@@ -21,7 +21,6 @@
 }
 
 
-
 .stringaRisposte{
     margin: 20px;
     height: 100px;
@@ -31,11 +30,16 @@
     cursor: pointer;
     background: none;
     color: white;
-    box-shadow: -1px 0 2px white;
+    box-shadow: -2px -2px 2px white;
 }
 
 .stringaRisposte:hover {
     background-color: purple;
+}
+
+.question{
+    color:white;
+    text-align: center;
 }
 
 

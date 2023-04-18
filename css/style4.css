@@ -1,0 +1,30 @@
+.grp2_paginaFeedback{
+    background-image:url(../assest/bg.jpg);
+    color: white;
+    width: 1024;
+    height: 728px;
+    padding: 50px;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.feedback {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.grp2_paginaFeedback h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.comment input {
+    background: none;
+    border-bottom: 2px solid purple;
+    width: 200px;
+}
+
+
+
+

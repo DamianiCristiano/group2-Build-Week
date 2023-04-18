@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/style3.css">
+    <link rel="stylesheet" href="css/style4.css">
 </head>
 <body>
-
-          
             
             <div class="grp2_PaginaBenv">
                 <img id="logo" src="assest/epicode_logo.png" alt="logo epicode" width="160px" height="35">
@@ -44,8 +44,18 @@
             <div class="grp2_PaginaBench">
                 <img id="logo" src="assest/epicode_logo.png" alt="logo epicode" width="160px" height="35">   
                 
-                <!-- Inserire il Timer -->
-                <div></div>
+                <!-- Inserire il Timer 
+                <div id="time">    
+                    <div class="circle">   
+                        <svg width='200', height="200"> 
+                            <circle id="circle_background" cx="100" cy="100" r="70"/>
+                            <circle id="circle" cx="100" cy="100" r="70"/>  
+                            <text id="timer" x="50%" y="50%" text-anchor="middle" stroke-width="1px" dy=".3em"></text> 
+                            <text class="svg_text_circle" x="50%" y="30%" text-anchor="middle">SECONDS</text> 
+                            <text class="svg_text_circle" x="50%" y="70%" text-anchor="middle">REMAINING</text> 
+                        </svg>      
+                    </div>    
+                </div> -->
 
 
                 <!-- Domanda da inserire -->
@@ -57,10 +67,7 @@
                         <button class="stringaRisposte">box 3</button>
                         <button class="stringaRisposte">box 4</button>
                      </div>
-     
-            
-                           
-                
+              
                 <div class="question">
                     <p>
                         Question <span>/10</span>
@@ -68,7 +75,66 @@
                 </div>
             </div>
             
-         
+          <!--Terza pagina  -->
+          <div class="grp2_PaginaResult">
+            <img id="logo" src="assest/epicode_logo.png" alt="logo epicode" width="160px" height="35">
+            
+          <div class="titoloRisultato">
+              <h2>Result</h2>
+              <h4>The summary of your answers:</h4>          
+          </div>
+
+          
+
+          <div class="bloccoRisultato">
+              <div>
+                  <h2 class="percCorrette">Correct <br></h2>
+                  <h4 class="risCorrette"> /10 questions</h4>    
+              </div>
+
+              
+            <div class="circle">
+                <h3></h3>
+                <p>testo</p>
+            </div>
+ 
+            <div>
+                <h2 class="percSbagliate"> Wrong <br></h2>
+                <h4 class="risSbagliate"> /10 questions</h4>    
+            </div>
+          </div>
+
+          <div class="button">
+            <button type="button">RATE US</button>
+          </div>
+
+          </div>
+
+          <!-- Quarta pagina -->
+          <div class="grp2_paginaFeedback">
+
+            <img id="logo" src="assest/epicode_logo.png" alt="logo epicode" width="160px" height="35">   
+
+            <div class="feedback">
+                <h2>Tell us how it's going</h2>
+                <p>From 0 to 10, how likely are you to recommend EPICODE<br>to a friend or a colleague?<p>
+            
+            <div id="stelleValut"></div>
+
+            <div>
+                <p>Leave us an open feedback about your experience so far</p>
+            </div>
+
+            <div class="comment">
+                <input type="text" placeholder="Write your comment here">
+            </div>
+
+            <div><button id="coloreBottone" type="button">MORE INFO</button></div>
+            </div>
+            
+
+
+          </div>
 
 </body>
 </html>
