@@ -29,6 +29,8 @@
     border-bottom: 2px solid #c2148d;
     width: 450px;
     margin: 30px 0 50px 0;
+    outline: none;
+    color: white;
 }
 
 .comment input::placeholder {
