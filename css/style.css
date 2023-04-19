@@ -6,6 +6,7 @@
     padding: 50px;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
 }
 
 h1 {
@@ -50,7 +51,7 @@ h3 {
 }
 
 
-#coloreBottone {
+.coloreBottone {
     padding: 20px 50px;
     background-color: #43ffff;
     font-weight: bold;
@@ -60,19 +61,6 @@ h3 {
     cursor: pointer;
 }
 
-/*
-#checkBox:checked {
-    background: rgba(40,40,40,0.7);
-}
-
-.checkBox-container {
-    position: absolute;
-    display: inline-block;
-    margin: 20px;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-}*/
     
 
 

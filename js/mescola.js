@@ -119,31 +119,49 @@ function selezionaDomanda() {
     domande.innerHTML += arrayMescolato[0].question;
 }
 
+//selezionaDomanda();
 
-selezionaDomanda();
+let domandaCorrente = 0;
 
-function addButtons() {
+function addButtons( nextReq) {
     let container = document.querySelector('.risposte')
     //Inserisco la prima stringa corretta
-    let button = document.createElement('button');
-    button.innerHTML += arrayMescolato[0].correct_answer;
-    button.classList.add('stringaRisposte');
-    container.append(button);
-    //Estrango 
+    //Estrai l'array
+    //Per caricare tutti gli oggetti faccio un for
+    //for(let i=0; i < 10; i++ )
     let nuovoA = [];
-    nuovoA = arrayMescolato[0].incorrect_answers;
+    nuovoA = nextReq.incorrect_answers;
+    nuovoA.push(nextReq.correct_answer)
     console.log(nuovoA);
     //Inserisco le altre stringhe non corretta
-    for (let i = 0; i < arrayMescolato[0].incorrect_answers.length; i++) {
+    for (let i = 0; i < nextReq.incorrect_answers.length; i++) {
           
           let button = document.createElement('button');
           button.innerHTML += nuovoA[i];
           // button.innerHTML += arrayMescolato[0].incorrect_answers[0];
           button.classList.add('stringaRisposte');
+          button.addEventListener("click", function(){
+            container.innerHTML = '';
+            addButtons(arrayMescolato[domandaCorrente])
+          })
           container.append(button);
         }
+        domandaCorrente++;
 }
-addButtons()
 
 
-:)
+let element = document.querySelector('#distruggi1');
+element.addEventListener("click", myFunction);
+
+function myFunction(){
+    let div = document.querySelector('.grp2_PaginaBenv');
+    div.remove();
+    addButtons(arrayMescolato[domandaCorrente]);
+}
+
+
+function creaDistruggi(){
+   
+  
+}
+creaDistruggi();
