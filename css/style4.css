@@ -31,6 +31,7 @@
     margin: 30px 0 50px 0;
     outline: none;
     color: white;
+    padding-bottom: 8px;
 }
 
 .comment input::placeholder {

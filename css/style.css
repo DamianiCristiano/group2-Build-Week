@@ -37,15 +37,6 @@ h3 {
     margin-top: 50px;
 }
 
-#coloreBottone {
-    padding: 20px 50px;
-    background-color: #43ffff;
-    font-weight: bold;
-    font-size: 20px;
-    box-shadow: 0 0 25px #43ffff;
-    border: none;
-    cursor: pointer;
-}
 /*Finire di definire il bottone, perchè non funziona la spunta*/
 #checkBox{
     width: 15px;
@@ -57,6 +48,19 @@ h3 {
     -moz-appearance: none;
     appearance: none; 
 }
+
+
+#coloreBottone {
+    padding: 20px 50px;
+    background-color: #43ffff;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 0 25px #43ffff;
+    border: none;
+    cursor: pointer;
+}
+
+/*
 #checkBox:checked {
     background: rgba(40,40,40,0.7);
 }
@@ -68,7 +72,7 @@ h3 {
     width: 100px;
     height: 100px;
     overflow: hidden;
-}
+}*/
     
 
 
