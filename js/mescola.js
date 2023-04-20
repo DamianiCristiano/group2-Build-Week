@@ -122,7 +122,7 @@ function selezionaDomanda() {
   //selezionaDomanda();
   let domandaCorrente = 0;
   let risposteSbagliate = [];
-  let risposteGiusta;
+  let risposteGiusta=0;
   
 function addButtons( nextReq) {
   
@@ -188,7 +188,127 @@ function myFunction(){
     addButtons(arrayMescolato[domandaCorrente]);
 }
 
+let n= risposteGiusta;
+let m =risposteSbagliate.length;
+
+console.log("kkk"+m);
+console.log("ggkk"+m);
+
+const ctx = document.getElementById('customCanvasBackgroundColor');
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+        label: '# of Votes',
+        data: [45, 89],
+        borderWidth: 1
+      }]
+    },
+});
 
 
+/*
+const ctx = document.getElementById('customCanvasBackgroundColor');
+
+Chart.types.Doughnut.extend(ctx,{
+  name: "DoughnutTextInside",
+  showTooltip: function() {
+      this.chart.ctx.save();
+      Chart.types.Doughnut.prototype.showTooltip.apply(this, arguments);
+      this.chart.ctx.restore();
+  },
+  draw: function() {
+      Chart.types.Doughnut.prototype.draw.apply(this, arguments);
+
+      var width = this.chart.width,
+          height = this.chart.height;
+
+      var fontSize = (height / 114).toFixed(2);
+      this.chart.ctx.font = fontSize + "em Verdana";
+      this.chart.ctx.textBaseline = "middle";
+
+      var text = "82%",
+          textX = Math.round((width - this.chart.ctx.measureText(text).width) / 2),
+          textY = height / 2;
+
+      this.chart.ctx.fillText(text, textX, textY);
+  }
+});
+
+var data = [{
+  value: 30,
+  color: "#F7464A"
+}, {
+  value: 50,
+  color: "#E2EAE9"
+}, {
+  value: 100,
+  color: "#D4CCC5"
+}, {
+  value: 40,
+  color: "#949FB1"
+}, {
+  value: 120,
+  color: "#4D5360"
+}];
+
+var DoughnutTextInsideChart = new Chart($('#myChart')[0].getContext('2d')).DoughnutTextInside(data, {
+  responsive: true
+});
 
 
+var data = {
+  labels: [
+    "Red",
+    "Blue",
+    "Yellow"
+  ],
+  datasets: [
+    {
+      data: [300, 50, 100],
+      backgroundColor: [
+        "#FF6384",
+        "#36A2EB",
+        "#FFCE56"
+      ],
+      hoverBackgroundColor: [
+        "#FF6384",
+        "#36A2EB",
+        "#FFCE56"
+      ]
+    }]
+};
+
+Chart.pluginService.register({
+  beforeDraw: function(chart) {
+    var width = chart.chart.width,
+        height = chart.chart.height,
+        ctx = chart.chart.ctx;
+
+    ctx.restore();
+    var fontSize = (height / 114).toFixed(2);
+    ctx.font = fontSize + "em sans-serif";
+    ctx.textBaseline = "middle";
+
+    var text = 
+        textX = Math.round((width - ctx.measureText(text).width) / 2),
+        textY = height / 2;
+
+    ctx.fillText(text, textX, textY);
+    ctx.save();
+  }
+});
+
+var chart = new Chart(document.getElementById('myChart'), {
+  type: 'doughnut',
+  data: data,
+  options: {
+      responsive: true,
+    legend: {
+      display: false
+    }
+  }
+});
+
+*/
