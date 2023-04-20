@@ -51,18 +51,6 @@
     <div class="grp2_PaginaBench">
         <div class="header">
             <img id="logo" src="assest/epicode_logo.png" alt="logo epicode" width="160px" height="35">
-
-            <div id="time">
-                <div class="circle">
-                    <svg width='200' , height="200">
-                        <circle id="circle_background" cx="100" cy="100" r="70" />
-                        <circle id="circle" cx="100" cy="100" r="70" />
-                        <text id="timer" x="50%" y="50%" text-anchor="middle" stroke-width="1px" dy=".3em"></text>
-                        <text class="svg_text_circle" x="50%" y="30%" text-anchor="middle">SECONDS</text>
-                        <text class="svg_text_circle" x="50%" y="70%" text-anchor="middle">REMAINING</text>
-                    </svg>
-                </div>
-            </div>
             
         </div>
 
@@ -72,10 +60,10 @@
         <div class="risposte">
         </div>
 
-        <div class="question">
-            <p>
-                Question <span>/10</span>
-            </p>
+        <div> 
+            <p class="question" >
+                Question <span>/10</span>  
+            </p>                     
         </div>
 
     </div>
@@ -97,11 +85,12 @@
                 <h4 class="risCorrette"> /10 questions</h4>
             </div>
 
-
-            <div class="paginaCircle">
-                <h3>Titolo</h3>
-                <p>testo</p>
+            <div>
+                <canvas id="customCanvasBackgroundColor"></canvas>
+                <h3></h3>
+                <p></p>
             </div>
+            
 
             <div>
                 <h2 class="percSbagliate"> Wrong <br></h2>
@@ -150,10 +139,12 @@
 
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/jchart.js"></script>
     <script src="js/mescola.js"></script>
     <script src="js/script.js"></script>
     <script src="js/timer.js"></script>
+     
 
 </body>
 

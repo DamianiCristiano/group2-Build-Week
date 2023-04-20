@@ -114,45 +114,74 @@ let arrayMescolato = mescola(questions);
 console.log(arrayMescolato);
 
 function selezionaDomanda() {
-    let domande = document.querySelector("#domande");     
-    //Vado a passare la stringa della domanda
+  let domande = document.querySelector("#domande");     
+  //Vado a passare la stringa della domanda
     domande.innerHTML += arrayMescolato[0].question;
-}
-
-//selezionaDomanda();
-
-let domandaCorrente = 0;
-
+  }
+  
+  //selezionaDomanda();
+  let domandaCorrente = 0;
+  let risposteSbagliate = [];
+  let risposteGiusta;
+  
 function addButtons( nextReq) {
+  
+    let domande = document.querySelector("#domande");     
+     //Vado a passare la stringa della domanda
+    domande.innerHTML = nextReq.question;
+
+    let quest=document.querySelector('.question')
     let container = document.querySelector('.risposte')
+    
     //Inserisco la prima stringa corretta
-    //Estrai l'array
-    //Per caricare tutti gli oggetti faccio un for
-    //for(let i=0; i < 10; i++ )
     let nuovoA = [];
     nuovoA = nextReq.incorrect_answers;
-    nuovoA.push(nextReq.correct_answer)
-    console.log(nuovoA);
+    nuovoA.push(nextReq.correct_answer) 
+    
+    if(nextReq.type != 'boolean'){
+      nuovoA = mescola(nuovoA)
+    }
+
     //Inserisco le altre stringhe non corretta
-    for (let i = 0; i < nextReq.incorrect_answers.length; i++) {
+    for (let i = 0; i < nuovoA.length; i++) {
           
           let button = document.createElement('button');
-          button.innerHTML += nuovoA[i];
-          // button.innerHTML += arrayMescolato[0].incorrect_answers[0];
+          button.innerHTML = nuovoA[i];
           button.classList.add('stringaRisposte');
           button.addEventListener("click", function(){
             container.innerHTML = '';
-            addButtons(arrayMescolato[domandaCorrente])
+           
+            if(nextReq.incorrect_answers.includes(button.innerHTML)){
+              risposteSbagliate.push(nextReq);
+            }
+            
+            if(domandaCorrente == arrayMescolato.length){
+              //lancio la funzione che passa alla fase finale(risultati)
+              console.log("Risposte sbagliate "+risposteSbagliate.length)
+              risposteGiusta = 10 - risposteSbagliate.length;
+              console.log("Risposte giuste "+ risposteGiusta)
+
+              let div = document.querySelector('.grp2_PaginaBench');
+              div.remove();
+              //modifica
+              //return risposteSbagliate.length
+            
+            }else{
+              addButtons(arrayMescolato[domandaCorrente])
+            }
           })
-          container.append(button);
+          container.append(button);   
         }
+        // console.log(domandaCorrente, risposteSbagliate);
         domandaCorrente++;
-}
-
-
+        quest.innerHTML= "Question " + domandaCorrente + "/10";
+        
+      }
+      
+      
 let element = document.querySelector('#distruggi1');
 element.addEventListener("click", myFunction);
-
+      
 function myFunction(){
     let div = document.querySelector('.grp2_PaginaBenv');
     div.remove();
@@ -160,8 +189,6 @@ function myFunction(){
 }
 
 
-function creaDistruggi(){
-   
-  
-}
-creaDistruggi();
+
+
+
