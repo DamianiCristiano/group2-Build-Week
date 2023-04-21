@@ -1,3 +1,21 @@
+const semicircles = document.querySelectorAll('.semicircle')
+const timer = document.querySelector('.timer')
+
+
+const hr = 0
+const min = 0
+const sec = 10 //creare funzione per cambiare secondi
+
+const hours = hr * 3600000;
+const minutes = min * 60000;
+const seconds = sec * 1000;
+const setTime = hours + minutes + seconds;
+const starTime = Date.now(); 
+const futureTime = starTime + setTime
+
+let timerLoop;
+let remainingTime;
+
 const questions = [
   {
     category: "Science: Computers",
@@ -102,6 +120,7 @@ const questions = [
 
 function mescola(array) {
   let newArr = [];
+  array = [...array];
   let length = array.length;
   for (let i = 0; i < length; i++) {
     let rand = Math.floor(Math.random() * array.length); //non usare random c'è rischio che ritorna lo stesso numero
@@ -127,20 +146,23 @@ let risposteSbagliate = [];
 let risposteGiusta = 0;
 
 function addButtons(nextReq) {
-
+  
+  //countDownTimer();
   //Collego id domande con la variabile domande e vado a passare la stringa della domanda
   let domande = document.querySelector("#domande");
   domande.innerHTML = nextReq.question;
-
+  
   let quest = document.querySelector('.question')
   let container = document.querySelector('.risposte')
+  container.innerHTML = '';
+  
 
   //Inserisco la prima stringa corretta
   let nuovoA = [];
-  nuovoA = nextReq.incorrect_answers;
+  nuovoA = [...nextReq.incorrect_answers];
   nuovoA.push(nextReq.correct_answer)
 
-  if (nextReq.type != 'boolean') {
+  if(nextReq.type != 'boolean') {
     nuovoA = mescola(nuovoA)
   }
 
@@ -151,19 +173,19 @@ function addButtons(nextReq) {
     button.innerHTML = nuovoA[i];
     button.classList.add('stringaRisposte');
     button.addEventListener("click", function () {
-      container.innerHTML = '';
+
 
       if (nextReq.incorrect_answers.includes(button.innerHTML)) {
         risposteSbagliate.push(nextReq);
       }
+      console.log(risposteSbagliate);
 
       if (domandaCorrente == arrayMescolato.length) {
         //lancio la funzione che passa alla fase finale(risultati)
         console.log("Risposte sbagliate " + risposteSbagliate.length)
         risposteGiusta = 10 - risposteSbagliate.length;
         console.log("Risposte giuste " + risposteGiusta)
-        console.log(typeof(risposteGiusta));
-        console.log(typeof(risposteSbagliate.length));
+        
 
 
         let div = document.querySelector('.grp2_PaginaBench');
@@ -189,7 +211,7 @@ function addButtons(nextReq) {
           type: 'doughnut',
           data: {
             datasets: [{
-              label: '# of Votes',
+              label: '',
               data: [risposteGiusta, risposteSbagliate.length],
               borderWidth: 0.5
             }]
@@ -216,6 +238,7 @@ function myFunction() {
   div.remove();
   let paginaBench = document.querySelector('.grp2_PaginaBench')
   paginaBench.style.display = 'block';
+  countDownTimer();
 
   addButtons(arrayMescolato[domandaCorrente]);
 }
@@ -248,3 +271,66 @@ function moreInfo(){
 
 
 
+
+
+
+
+function countDownTimer(){
+  let remainingTime = sec;
+  if(timerLoop){
+    clearInterval(timerLoop);
+  }
+    timerLoop = setInterval(()=>{
+
+      const angle = (remainingTime / setTime) * 360;
+      
+      
+      
+    if(angle > 180) {
+        semicircles[2].style.display = 'none';
+        semicircles[0].style.transform = 'rotate(180deg)';
+        semicircles[1].style.transform = `rotate(${angle}deg)`;
+      }
+    
+    else {
+      semicircles[2].style.display = 'block';
+        semicircles[0].style.transform = `rotate(${angle}deg)`;
+        semicircles[1].style.transform = `rotate(${angle}deg)`;
+      }
+
+      
+      const hrs = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((remainingTime / (1000 * 60) % 60));
+      const secs = Math.floor((remainingTime / 1000) % 1000);
+      
+      timer.innerHTML = `
+      <div>${remainingTime}</div>
+      `;
+      
+      if(remainingTime <= 0) {
+        remainingTime = sec;
+        addButtons(arrayMescolato[domandaCorrente]);
+        semicircles[0].style.display= 'none'
+        semicircles[1].style.display= 'none'
+        semicircles[2].style.display= 'none'
+      }else{
+        remainingTime--;
+      }
+},1000)
+}
+
+// creare funzione con switch 
+//  è esempio, butto un po di idee
+/*function difficultyQuest(){
+    switch (difficult){
+        case "easy":
+            sec = 30;
+            break;
+        case "medium":
+            sec = 60;
+            break;
+        case "hard":
+            sec = 120;
+            break;
+    }
+}*/

@@ -13,12 +13,14 @@ const setTime = hours + minutes + seconds;
 const starTime = Date.now(); 
 const futureTime = starTime + setTime
 
-const timerLoop = setInterval(countDownTimer);
-countDownTimer();
+let timerLoop;
+
 
 
 
 function countDownTimer(){
+    clearInterval(timerLoop);
+    timerLoop = setInterval(()=>{
     const currentTime = Date.now();
     const remainingTime = futureTime - currentTime;
     const angle = (remainingTime / setTime) * 360;
@@ -46,12 +48,13 @@ function countDownTimer(){
     <div>${secs}</div>
     `;
     
-    if(remainingTime < 0) {
-        clearInterval(timerLoop);
+    if(remainingTime <= 0) {
+        
         semicircles[0].style.display= 'none'
         semicircles[1].style.display= 'none'
         semicircles[2].style.display= 'none'
     }
+}
 }
 
 // creare funzione con switch 
@@ -66,5 +69,6 @@ function countDownTimer(){
             break;
         case "hard":
             sec = 120;
+            break;
     }
 }*/
