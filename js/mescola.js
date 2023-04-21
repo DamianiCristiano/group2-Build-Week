@@ -165,7 +165,23 @@ function addButtons( nextReq) {
               div.remove();
               //modifica
               //return risposteSbagliate.length
-            
+              console.log(risposteGiusta)
+              console.log(risposteSbagliate.length)
+              const ctx = document.getElementById('customCanvasBackgroundColor');
+              let paginaResult = document.querySelector('.grp2_PaginaResult')
+              paginaResult.style.display = 'block'
+                new Chart(ctx, {
+                  type: 'doughnut',
+                  data: {
+                      datasets: [{
+                      label: '# of Votes',
+                      data: [risposteGiusta, risposteSbagliate.length],
+                      borderWidth: 1
+                    }]
+                  },
+              });
+
+
             }else{
               addButtons(arrayMescolato[domandaCorrente])
             }
@@ -185,29 +201,23 @@ element.addEventListener("click", myFunction);
 function myFunction(){
     let div = document.querySelector('.grp2_PaginaBenv');
     div.remove();
+    let paginaBench = document.querySelector('.grp2_PaginaBench')
+    paginaBench.style.display = 'block';
+    
     addButtons(arrayMescolato[domandaCorrente]);
 }
 
-let n= 7;
-let m =3;
-
-console.log("kkk"+m);
-console.log("ggkk"+m);
-
-const ctx = document.getElementById('customCanvasBackgroundColor');
-
-  new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        datasets: [{
-        label: '# of Votes',
-        data: [n, m],
-        borderWidth: 1
-      }]
-    },
-});
+let element2 = document.querySelector('#distruggi2');
+element2.addEventListener("click", rateUs);
 
 
+function rateUs(){
+  let paginaResult = document.querySelector('.grp2_PaginaResult');
+  paginaResult.remove();
+
+  let paginaFeed = document.querySelector('.grp2_paginaFeedback');
+  paginaFeed.style.display = 'block';
+}
 /*
 const ctx = document.getElementById('customCanvasBackgroundColor');
 

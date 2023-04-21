@@ -7,10 +7,7 @@
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-}
-
-#logo{
-    padding : 20px 40px ;
+    display: none;
 }
 
 .header {
