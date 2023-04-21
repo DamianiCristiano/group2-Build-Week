@@ -113,11 +113,11 @@ function mescola(array) {
 let arrayMescolato = mescola(questions);
 console.log(arrayMescolato);
 
-function selezionaDomanda() {
+/*function selezionaDomanda() {
   let domande = document.querySelector("#domande");     
   //Vado a passare la stringa della domanda
     domande.innerHTML += arrayMescolato[0].question;
-  }
+  }*/
   
   //selezionaDomanda();
   let domandaCorrente = 0;
@@ -125,9 +125,9 @@ function selezionaDomanda() {
   let risposteGiusta=0;
   
 function addButtons( nextReq) {
-  
+    
+    //Collego id domande con la variabile domande e vado a passare la stringa della domanda
     let domande = document.querySelector("#domande");     
-     //Vado a passare la stringa della domanda
     domande.innerHTML = nextReq.question;
 
     let quest=document.querySelector('.question')
@@ -188,8 +188,8 @@ function myFunction(){
     addButtons(arrayMescolato[domandaCorrente]);
 }
 
-let n= risposteGiusta;
-let m =risposteSbagliate.length;
+let n= 7;
+let m =3;
 
 console.log("kkk"+m);
 console.log("ggkk"+m);
@@ -201,7 +201,7 @@ const ctx = document.getElementById('customCanvasBackgroundColor');
     data: {
         datasets: [{
         label: '# of Votes',
-        data: [45, 89],
+        data: [n, m],
         borderWidth: 1
       }]
     },

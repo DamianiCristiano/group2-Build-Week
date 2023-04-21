@@ -6,7 +6,7 @@ function startTimer(duration) {
         
         seconds = parseInt(timer);
         
-        document.getElementById('timer').innerHTML =  seconds;
+        document.getElementById('timer').innerHTML = seconds;
 
         if (--timer < 0) {
             timer = duration;
